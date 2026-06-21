@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mohammad Mehdi Barzegar | Neurocognitive Engineer</title>
+<style>
+  :root {
+    --primary: #1a1a2e;
+    --accent: #16213e;
+    --highlight: #0f3460;
+    --gold: #e94560;
+    --text: #eaeaea;
+    --muted: #a0a0b0;
+    --card: #1e1e3a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--primary);
+    color: var(--text);
+    scroll-behavior: smooth;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(26,26,46,0.95);
+    backdrop-filter: blur(10px);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 4rem;
+    border-bottom: 1px solid rgba(233,69,96,0.2);
+  }
+  nav .logo { font-size: 1.2rem; font-weight: 700; color: var(--gold); }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+  nav ul a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background: radial-gradient(ellipse at top, #0f3460 0%, #1a1a2e 60%);
+  }
+  .hero-content { max-width: 700px; }
+  .hero h1 {
+    font-size: 3rem; font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, var(--gold) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    animation: fadeUp 0.8s ease forwards;
+  }
+  .hero .title {
+    font-size: 1.1rem; color: var(--gold);
+    margin-bottom: 1rem;
+    animation: fadeUp 1s ease forwards;
+  }
+  .hero p {
+    color: var(--muted); line-height: 1.8; font-size: 1rem;
+    margin-bottom: 2rem;
+    animation: fadeUp 1.2s ease forwards;
+  }
+  .badges {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    animation: fadeUp 1.4s ease forwards;
+  }
+  .badge {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--gold);
+    border-radius: 2rem;
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+  }
+  .badge:hover { background: var(--gold); color: white; }
+
+  /* SECTIONS */
+  section { padding: 5rem 4rem; max-width: 1000px; margin: 0 auto; }
+  .section-title {
+    font-size: 1.8rem; font-weight: 700;
+    margin-bottom: 2.5rem;
+    position: relative; display: inline-block;
+  }
+  .section-title::after {
+    content: ''; position: absolute;
+    bottom: -8px; left: 0;
+    width: 50px; height: 3px;
+    background: var(--gold); border-radius: 2px;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.2rem;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .card:hover { transform: translateY(-3px); border-color: var(--gold); }
+  .card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+  .card .meta { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.6rem; }
+  .card p, .card li { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+  .card ul { padding-left: 1.2rem; }
+
+  /* PUBLICATIONS */
+  .pub-badge {
+    display: inline-block;
+    background: rgba(233,69,96,0.15);
+    color: var(--gold);
+    border-radius: 4px;
+    padding: 0.15rem 0.6rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .pub-badge.prep {
+    background: rgba(160,160,176,0.15);
+    color: var(--muted);
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .skill-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    transition: border-color 0.3s;
+  }
+  .skill-card:hover { border-color: var(--gold); }
+  .skill-card h4 { color: var(--gold); margin-bottom: 0.8rem; font-size: 0.9rem; }
+  .skill-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.7; }
+
+  /* HONORS */
+  .honor-item {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .honor-icon { color: var(--gold); font-size: 1.2rem; margin-top: 2px; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { gap: 1rem; }
+    .hero h1 { font-size: 2rem; }
+    section { padding: 3rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">MMB</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#honors">Honors</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Mohammad Mehdi Barzegar</h1>
+    <div class="title">Neurocognitive Engineer &nbsp;·&nbsp; EEG Researcher &nbsp;·&nbsp; Deep Learning</div>
+    <p>M.Sc. graduate in Neurocognitive Engineering from Iran University of Science and Technology (GPA: 4.0/4.0). Full-time researcher specializing in EEG-based deep learning for neurological disease diagnosis, brain connectivity analysis, and explainable AI.</p>
+    <div class="badges">
+      <a class="badge" href="mailto:barzegar.mehdi9877@gmail.com">✉ Email</a>
+      <a class="badge" href="https://www.linkedin.com/in/YOUR-ID" target="_blank">in LinkedIn</a>
+      <a class="badge" href="https://scholar.google.com/citations?user=YOUR-ID" target="_blank">🎓 Google Scholar</a>
+      <a class="badge" href="https://github.com/BarzegarMohammadMehdi" target="_blank">GitHub</a>
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<section id="about">
+  <h2 class="section-title">Education</h2>
+
+  <div class="card">
+    <h3>M.Sc. in Biomedical Engineering – Neurocognitive Engineering</h3>
+    <div class="meta">Iran University of Science and Technology (IUST) &nbsp;·&nbsp; Sep 2022 – Sep 2025</div>
+    <p><strong>GPA: 18.86/20 (4.0/4.0)</strong> &nbsp;|&nbsp; QS Ranking #436 (2025)</p>
+    <p style="margin-top:0.4rem">Thesis: Use of Source Localization and Brain Connectivity in Imagery Hand Movement Classification with EEG Signal</p>
+  </div>
+
+  <div class="card">
+    <h3>B.Sc. in Electrical Engineering</h3>
+    <div class="meta">Bu-Ali Sina University (BASU) &nbsp;·&nbsp; Sep 2017 – Jan 2022</div>
+    <p><strong>GPA: 16.16/20 (3.3/4.0)</strong></p>
+    <p style="margin-top:0.4rem">Thesis: Image Classification CIFAR-10 Using Convolutional Neural Network</p>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2 class="section-title">Research Experience</h2>
+  <div class="card">
+    <h3>Full-Time Researcher</h3>
+    <div class="meta">Neuroscience and Neuroengineering Laboratory (NNRL) &nbsp;·&nbsp; Sep 2023 – Sep 2025</div>
+    <ul>
+      <li>Developed explainable epileptic seizure detection using CNN–Bi-LSTM Attention hybrid model on EEG signals (published, JRH 2025).</li>
+      <li>Built GCN-based framework for epilepsy diagnosis from EEG functional connectivity graphs (published, IWINAC 2026).</li>
+      <li>Designed UCTESE-Net, an uncertainty-aware Squeeze-and-Excitation network for schizophrenia diagnosis (14 SZ / 14 HC subjects).</li>
+      <li>Built Convolutional SE-Transformer for Parkinson's disease detection from EEG signals.</li>
+      <li>Conducted PRISMA-compliant systematic review and meta-analysis on Alzheimer's diagnosis (~95 studies).</li>
+      <li>Applied eLORETA source localization and PLV/PLI/Coherence connectivity features for motor imagery classification on PhysioNet (109 subjects).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <h2 class="section-title">Publications</h2>
+
+  <div class="card">
+    <span class="pub-badge">Published</span>
+    <h3>Explainable Epileptic Seizure Detection from EEG Signals via CNN–Bi-LSTM Attention Hybrid Model</h3>
+    <div class="meta">MM. Barzegar, N. Ahmadi Daryakenari, M. Khodatars &nbsp;·&nbsp; Journal of Research and Health, 2025</div>
+    <p><a href="https://doi.org/10.32598/JRH.15.specialissue.2892.1" style="color:var(--gold)">DOI: 10.32598/JRH.15.specialissue.2892.1</a></p>
+  </div>
+
+  <div class="card">
+    <span class="pub-badge">Published</span>
+    <h3>Early Diagnosis of Epileptic Seizures from EEG Signals Using Graph Convolutional Network Model</h3>
+    <div class="meta">A. Shoeibi, MM. Barzegar, et al. &nbsp;·&nbsp; Proceedings of IWINAC, 2026</div>
+    <p><a href="https://doi.org/10.1007/978-3-032-27314-7_11" style="color:var(--gold)">DOI: 10.1007/978-3-032-27314-7_11</a></p>
+  </div>
+
+  <div class="card">
+    <span class="pub-badge prep">In Preparation</span>
+    <h3>UCTESE-Net: Uncertainty Aware Explainable SE Network for Schizophrenia Diagnosis from EEG</h3>
+    <div class="meta">MM. Barzegar, A. Shoeibi, et al. &nbsp;·&nbsp; 2026</div>
+  </div>
+
+  <div class="card">
+    <span class="pub-badge prep">In Preparation</span>
+    <h3>EEG-Based Diagnosis of Parkinson's Disease Using a Convolutional SE-Transformer Network</h3>
+    <div class="meta">MM. Barzegar, A. Shoeibi, et al. &nbsp;·&nbsp; 2026</div>
+  </div>
+
+  <div class="card">
+    <span class="pub-badge prep">In Preparation</span>
+    <h3>Systematic Review on Alzheimer's Diagnosis from Neuroimaging Using Deep Graph Learning</h3>
+    <div class="meta">MM. Barzegar, A. Shoeibi, et al. &nbsp;·&nbsp; 2026</div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h4>🧪 Experimental</h4>
+      <p>EEG/EMG data acquisition · Clinical trial management · Patient interaction</p>
+    </div>
+    <div class="skill-card">
+      <h4>📊 Analysis</h4>
+      <p>Signal Processing · Statistical Analysis · Functional Connectivity · Source Localization</p>
+    </div>
+    <div class="skill-card">
+      <h4>💻 Programming</h4>
+      <p>Python · MATLAB</p>
+    </div>
+    <div class="skill-card">
+      <h4>🤖 ML / DL</h4>
+      <p>TensorFlow · PyTorch · Scikit-learn · XAI</p>
+    </div>
+    <div class="skill-card">
+      <h4>🧠 Toolboxes</h4>
+      <p>EEGLAB · MNE-Python · FieldTrip · Hermes</p>
+    </div>
+  </div>
+</section>
+
+<!-- HONORS -->
+<section id="honors">
+  <h2 class="section-title">Honors & Awards</h2>
+
+  <div class="honor-item">
+    <span class="honor-icon">🥇</span>
+    <span>Ranked 1st among the 2022 M.Sc. intake in Biomedical Engineering – Neurocognitive Engineering, IUST</span>
+  </div>
+  <div class="honor-item">
+    <span class="honor-icon">🏅</span>
+    <span>Top 3% in Iran's National M.Sc. Entrance Exam (15,728 participants)</span>
+  </div>
+  <div class="honor-item">
+    <span class="honor-icon">🏅</span>
+    <span>Top 8% in Iran's National B.Sc. Entrance Exam (137,788 participants)</span>
+  </div>
+  <div class="honor-item">
+    <span class="honor-icon">📌</span>
+    <span>Ranked among the top 15% of entrants in B.Sc. Electrical Engineering (2017 intake)</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="card" style="display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center">
+    <a href="mailto:barzegar.mehdi9877@gmail.com" style="color:var(--gold); text-decoration:none">✉ barzegar.mehdi9877@gmail.com</a>
+    <a href="https://www.linkedin.com/in/YOUR-ID" target="_blank" style="color:var(--gold); text-decoration:none">in LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=YOUR-ID" target="_blank" style="color:var(--gold); text-decoration:none">🎓 Google Scholar</a>
+    <a href="https://github.com/BarzegarMohammadMehdi" target="_blank" style="color:var(--gold); text-decoration:none">🐙 GitHub</a>
+  </div>
+</section>
+
+<footer>
+  © 2025 Mohammad Mehdi Barzegar · Tehran, Iran
+</footer>
+
+</body>
+</html>
