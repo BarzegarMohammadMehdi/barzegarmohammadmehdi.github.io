@@ -24,7 +24,7 @@
 <!-- Navbar -->
 <nav class="fixed w-full bg-gray-900 z-50 py-4 shadow-lg">
     <div class="container mx-auto flex justify-between items-center px-5">
-        <h1 class="text-xl font-bold">MMB</h1>
+        <a href="#home" class="text-xl font-bold hover:text-red-400 transition">MMB</a>
         <ul class="flex space-x-5 text-sm">
             <li><a href="#home" class="hover:text-red-400 transition">Home</a></li>
             <li><a href="#about" class="hover:text-red-400 transition">About</a></li>
@@ -41,7 +41,7 @@
 <!-- Hero -->
 <section id="home" class="relative h-screen flex items-center justify-center text-center bg-gray-950">
     <div class="absolute inset-0 hero-overlay z-0"
-         style="background-image: url('./Home.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay;">
+         style="background-image: url('./Images/Home.jpg'); background-size: cover; background-position: center;"><div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.75));"></div>
     </div>
     <div class="z-10 px-4">
         <h1 class="text-5xl md:text-7xl font-extrabold mb-4" data-aos="fade-up">Mohammad Mehdi Barzegar</h1>
@@ -74,7 +74,7 @@
         <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">About Me</h2>
         <div class="flex flex-col md:flex-row items-center gap-10">
             <div class="md:w-1/3 flex justify-center" data-aos="fade-right">
-                <img src="./About_Me.jpg" alt="Mohammad Mehdi Barzegar"
+                <img src="./Images/About_Me.jpg" alt="Mohammad Mehdi Barzegar"
                      class="rounded-2xl shadow-2xl border-4 border-red-600 w-72 h-96 object-cover">
             </div>
             <div class="md:w-2/3" data-aos="fade-left">
@@ -217,38 +217,6 @@
     </div>
 </section>
 
-<!-- Lab Gallery -->
-<section class="py-20 bg-gray-800">
-    <div class="container mx-auto px-5">
-        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Lab Life</h2>
-        <div class="relative max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-2xl" data-aos="fade-up">
-            <!-- Slides -->
-            <div id="gallery" class="flex transition-transform duration-500 ease-in-out">
-                <div class="min-w-full">
-                    <img src="./lab1.jpg" alt="Lab" class="w-full h-96 object-cover">
-                </div>
-                <div class="min-w-full">
-                    <img src="./lab2.jpg" alt="EEG Recording" class="w-full h-96 object-cover">
-                </div>
-            </div>
-            <!-- Prev / Next -->
-            <button onclick="slideGallery(-1)"
-                class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center transition">
-                &#8249;
-            </button>
-            <button onclick="slideGallery(1)"
-                class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center transition">
-                &#8250;
-            </button>
-            <!-- Dots -->
-            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-                <span class="dot w-2 h-2 rounded-full bg-white opacity-100 cursor-pointer" onclick="goToSlide(0)"></span>
-                <span class="dot w-2 h-2 rounded-full bg-white opacity-40 cursor-pointer" onclick="goToSlide(1)"></span>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Publications -->
 <section id="publications" class="py-20 bg-gray-800">
     <div class="container mx-auto px-5">
@@ -331,6 +299,38 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+</section>
+
+<!-- Lab Gallery -->
+<section class="py-20 bg-gray-800">
+    <div class="container mx-auto px-5">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Lab Life</h2>
+        <div class="relative max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-2xl" data-aos="fade-up">
+            <!-- Slides -->
+            <div id="gallery" class="flex transition-transform duration-500 ease-in-out">
+                <div class="min-w-full">
+                    <img src="./Images/lab1.jpg" alt="Lab" class="w-full h-96 object-cover">
+                </div>
+                <div class="min-w-full">
+                    <img src="./Images/lab2.jpg" alt="EEG Recording" class="w-full h-96 object-cover">
+                </div>
+            </div>
+            <!-- Prev / Next -->
+            <button onclick="slideGallery(-1)"
+                class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                &#8249;
+            </button>
+            <button onclick="slideGallery(1)"
+                class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                &#8250;
+            </button>
+            <!-- Dots -->
+            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                <span class="dot w-2 h-2 rounded-full bg-white opacity-100 cursor-pointer" onclick="goToSlide(0)"></span>
+                <span class="dot w-2 h-2 rounded-full bg-white opacity-40 cursor-pointer" onclick="goToSlide(1)"></span>
+            </div>
         </div>
     </div>
 </section>
