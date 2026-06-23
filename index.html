@@ -41,7 +41,7 @@
 <!-- Hero -->
 <section id="home" class="relative h-screen flex items-center justify-center text-center bg-gray-950">
     <div class="absolute inset-0 hero-overlay z-0"
-         style="background-image: url('./About_Me.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay;">
+         style="background-image: url('./home.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay;">
     </div>
     <div class="z-10 px-4">
         <h1 class="text-5xl md:text-7xl font-extrabold mb-4" data-aos="fade-up">Mohammad Mehdi Barzegar</h1>
@@ -217,6 +217,38 @@
     </div>
 </section>
 
+<!-- Lab Gallery -->
+<section class="py-20 bg-gray-800">
+    <div class="container mx-auto px-5">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Lab Life</h2>
+        <div class="relative max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-2xl" data-aos="fade-up">
+            <!-- Slides -->
+            <div id="gallery" class="flex transition-transform duration-500 ease-in-out">
+                <div class="min-w-full">
+                    <img src="./lab1.jpg" alt="Lab" class="w-full h-96 object-cover">
+                </div>
+                <div class="min-w-full">
+                    <img src="./lab2.jpg" alt="EEG Recording" class="w-full h-96 object-cover">
+                </div>
+            </div>
+            <!-- Prev / Next -->
+            <button onclick="slideGallery(-1)"
+                class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                &#8249;
+            </button>
+            <button onclick="slideGallery(1)"
+                class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                &#8250;
+            </button>
+            <!-- Dots -->
+            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                <span class="dot w-2 h-2 rounded-full bg-white opacity-100 cursor-pointer" onclick="goToSlide(0)"></span>
+                <span class="dot w-2 h-2 rounded-full bg-white opacity-40 cursor-pointer" onclick="goToSlide(1)"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Publications -->
 <section id="publications" class="py-20 bg-gray-800">
     <div class="container mx-auto px-5">
@@ -279,7 +311,7 @@
                 <i class="fas fa-star text-yellow-400 text-2xl mt-1"></i>
                 <div>
                     <h3 class="font-bold text-white">Top 15% – B.Sc. Electrical Engineering Entrants (2017)</h3>
-                    <p class="text-gray-400 text-sm">Bu-Ali Sina University</p>
+                    <p class="text-gray-400 text-sm">Electrical Engineering, BASU</p>
                 </div>
             </div>
 
@@ -336,6 +368,26 @@
 
 <script>
     AOS.init({ duration: 700, once: true });
+
+    let current = 0;
+    const total = 2;
+
+    function slideGallery(dir) {
+        current = (current + dir + total) % total;
+        updateGallery();
+    }
+
+    function goToSlide(index) {
+        current = index;
+        updateGallery();
+    }
+
+    function updateGallery() {
+        document.getElementById('gallery').style.transform = `translateX(-${current * 100}%)`;
+        document.querySelectorAll('.dot').forEach((d, i) => {
+            d.style.opacity = i === current ? '1' : '0.4';
+        });
+    }
 </script>
 </body>
 </html>
