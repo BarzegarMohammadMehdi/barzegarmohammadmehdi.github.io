@@ -12,330 +12,356 @@
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .hero-overlay {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9));
-            z-index: 1;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.92));
         }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
+        .skill-icon { width: 64px; height: 64px; object-fit: contain; }
+        .card-hover { transition: transform 0.3s, box-shadow 0.3s; }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
 
-    <!-- Navbar -->
-    <nav class="fixed w-full bg-gray-900 z-50 py-4 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center px-5">
-            <h1 class="text-2xl font-bold">Mohammad Mehdi Barzegar</h1>
-            <ul class="flex space-x-6">
-                <li><a href="#home" class="hover:text-gray-400">Home</a></li>
-                <li><a href="#about" class="hover:text-gray-400">About</a></li>
-                <li><a href="#skills" class="hover:text-gray-400">Skills</a></li>
-                <li><a href="#resume" class="hover:text-gray-400">Resume</a></li>
-                <li><a href="#awards" class="hover:text-gray-400">Awards</a></li>
-                <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
-            </ul>
+<!-- Navbar -->
+<nav class="fixed w-full bg-gray-900 z-50 py-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center px-5">
+        <h1 class="text-xl font-bold">MMB</h1>
+        <ul class="flex space-x-5 text-sm">
+            <li><a href="#home" class="hover:text-red-400 transition">Home</a></li>
+            <li><a href="#about" class="hover:text-red-400 transition">About</a></li>
+            <li><a href="#skills" class="hover:text-red-400 transition">Skills</a></li>
+            <li><a href="#education" class="hover:text-red-400 transition">Education</a></li>
+            <li><a href="#experience" class="hover:text-red-400 transition">Experience</a></li>
+            <li><a href="#publications" class="hover:text-red-400 transition">Publications</a></li>
+            <li><a href="#awards" class="hover:text-red-400 transition">Awards</a></li>
+            <li><a href="#contact" class="hover:text-red-400 transition">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section id="home" class="relative h-screen flex items-center justify-center text-center bg-gray-950">
+    <div class="absolute inset-0 hero-overlay z-0"
+         style="background-image: url('./photo.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay;">
+    </div>
+    <div class="z-10 px-4">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-4" data-aos="fade-up">Mohammad Mehdi Barzegar</h1>
+        <p class="text-lg text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="100">
+            Neurocognitive Engineer &nbsp;·&nbsp; EEG Researcher &nbsp;·&nbsp; Deep Learning
+        </p>
+        <div class="flex justify-center space-x-4 mb-8" data-aos="fade-up" data-aos-delay="200">
+            <a href="./CV.pdf" target="_blank"
+               class="bg-red-600 hover:bg-red-500 text-white font-semibold px-6 py-2 rounded-full transition">
+                View CV
+            </a>
+            <a href="#contact"
+               class="border border-white hover:bg-white hover:text-gray-900 text-white font-semibold px-6 py-2 rounded-full transition">
+                Contact Me
+            </a>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center text-center" style="background-image: url('./photo.jpg');">
-        <div class="absolute inset-0 hero-overlay"></div>
-        <div class="z-10">
-            <h1 class="text-5xl md:text-7xl font-extrabold" data-aos="fade-up">Mohammad Mehdi Barzegar</h1>
-            <p class="mt-4 text-lg" data-aos="fade-up" data-aos-delay="100">Neurocognitive Engineer · EEG Researcher · Deep Learning</p>
-            <div class="mt-8 flex justify-center space-x-4">
-                <a href="./CV.pdf" target="_blank"
-                   class="bg-red-600 hover:bg-red-500 text-white font-semibold px-5 py-2 rounded-full transition">
-                    View CV
-                </a>
-                <a href="#contact"
-                   class="border border-white text-white font-semibold px-5 py-2 rounded-full hover:bg-white hover:text-gray-900 transition">
-                    Contact Me
-                </a>
-            </div>
-            <div class="mt-8 flex justify-center space-x-4 text-2xl">
-                <a href="mailto:barzegar.mohammad.m@gmail.com" class="hover:text-red-500"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/BarzegarMohammadMehdi" target="_blank" class="hover:text-red-500"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/YOUR-ID" target="_blank" class="hover:text-red-500"><i class="fab fa-linkedin"></i></a>
-                <a href="https://scholar.google.com/citations?user=YOUR-ID" target="_blank" class="hover:text-red-500"><i class="fas fa-graduation-cap"></i></a>
-            </div>
+        <div class="flex justify-center space-x-6 text-2xl" data-aos="fade-up" data-aos-delay="300">
+            <a href="mailto:barzegar.mohammad.m@gmail.com" class="hover:text-red-400 transition" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/BarzegarMohammadMehdi" target="_blank" class="hover:text-red-400 transition" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/YOUR-ID" target="_blank" class="hover:text-red-400 transition" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://scholar.google.com/citations?user=YOUR-ID" target="_blank" class="hover:text-red-400 transition" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+            <a href="https://barzegarmohammadmehdi.github.io" target="_blank" class="hover:text-red-400 transition" title="Website"><i class="fas fa-globe"></i></a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-5">
-            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2" data-aos="fade-right">
-                    <img src="./photo.jpg" alt="Mohammad Mehdi Barzegar" class="rounded-lg shadow-lg">
-                </div>
-                <div class="md:w-1/2 mt-10 md:mt-0 md:ml-10" data-aos="fade-left">
-                    <p class="text-lg leading-relaxed space-y-4">
-                        <p class="mb-4">I am a researcher at the Neuroscience and Neuroengineering Laboratory (NNRL), Iran University of Science and Technology, focusing on the intersection of deep learning and clinical neuroscience.</p>
-                        <p class="mb-4">My work involves designing AI-driven frameworks for early diagnosis of neurological disorders — including epilepsy, Parkinson's disease, schizophrenia, and Alzheimer's disease — using EEG signals. My research integrates explainable AI (XAI), brain connectivity analysis, and source localization to build clinically interpretable models.</p>
-                        <p class="mb-4">I completed my M.Sc. in Neurocognitive Engineering at IUST with a GPA of 18.86/20 (4.0/4.0), graduating as the top student of my intake. My thesis focused on motor imagery hand movement classification using EEG source localization and brain connectivity features.</p>
-                        <p>Always open to new research collaborations and PhD opportunities :)</p>
-                    </p>
-                </div>
+<!-- About -->
+<section id="about" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-5">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">About Me</h2>
+        <div class="flex flex-col md:flex-row items-center gap-10">
+            <div class="md:w-1/3 flex justify-center" data-aos="fade-right">
+                <img src="./photo.jpg" alt="Mohammad Mehdi Barzegar"
+                     class="rounded-2xl shadow-2xl border-4 border-red-600 w-72 h-96 object-cover">
             </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-900 text-gray-100">
-        <div class="container mx-auto px-5">
-            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Skills</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10 place-items-center" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="flex flex-col items-center text-center">
-                    <i class="fab fa-python text-6xl text-blue-400"></i>
-                    <span class="mt-3 text-lg">Python</span>
-                </div>
-
-                <div class="flex flex-col items-center text-center">
-                    <i class="fas fa-calculator text-6xl text-orange-400"></i>
-                    <span class="mt-3 text-lg">MATLAB</span>
-                </div>
-
-                <div class="flex flex-col items-center text-center">
-                    <i class="fas fa-brain text-6xl text-purple-400"></i>
-                    <span class="mt-3 text-lg">Deep Learning</span>
-                </div>
-
-                <div class="flex flex-col items-center text-center">
-                    <i class="fas fa-wave-square text-6xl text-green-400"></i>
-                    <span class="mt-3 text-lg">EEG Processing</span>
-                </div>
-
-                <div class="flex flex-col items-center text-center">
-                    <i class="fas fa-network-wired text-6xl text-yellow-400"></i>
-                    <span class="mt-3 text-lg">TensorFlow</span>
-                </div>
-
-                <div class="flex flex-col items-center text-center">
-                    <i class="fas fa-fire text-6xl text-red-400"></i>
-                    <span class="mt-3 text-lg">PyTorch</span>
-                </div>
-
-                <div class="flex flex-col items-center text-center">
-                    <i class="fas fa-chart-line text-6xl text-blue-300"></i>
-                    <span class="mt-3 text-lg">Signal Processing</span>
-                </div>
-
-                <div class="flex flex-col items-center text-center">
-                    <i class="fas fa-project-diagram text-6xl text-pink-400"></i>
-                    <span class="mt-3 text-lg">Brain Connectivity</span>
-                </div>
-
-                <div class="flex flex-col items-center text-center">
-                    <i class="fas fa-search text-6xl text-indigo-400"></i>
-                    <span class="mt-3 text-lg">Explainable AI</span>
-                </div>
-
-                <div class="flex flex-col items-center text-center">
-                    <i class="fas fa-flask text-6xl text-teal-400"></i>
-                    <span class="mt-3 text-lg">EEGLAB</span>
-                </div>
-
-                <div class="flex flex-col items-center text-center">
-                    <i class="fas fa-code text-6xl text-gray-300"></i>
-                    <span class="mt-3 text-lg">MNE-Python</span>
-                </div>
-
-                <div class="flex flex-col items-center text-center">
-                    <i class="fas fa-microscope text-6xl text-cyan-400"></i>
-                    <span class="mt-3 text-lg">Source Localization</span>
-                </div>
-
+            <div class="md:w-2/3" data-aos="fade-left">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    I am a researcher at the <strong class="text-white">Neuroscience and Neuroengineering Laboratory (NNRL)</strong>, Iran University of Science and Technology, focusing on the intersection of deep learning and clinical neuroscience.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    My work involves designing AI-driven frameworks for early diagnosis of neurological disorders — including epilepsy, Parkinson's disease, schizophrenia, and Alzheimer's disease — using EEG signals. My research integrates <strong class="text-white">explainable AI (XAI)</strong>, brain connectivity analysis, and source localization.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    I completed my M.Sc. in Neurocognitive Engineering at IUST with a GPA of <strong class="text-white">18.86/20 (4.0/4.0)</strong>, graduating as the <strong class="text-white">top student</strong> of my intake.
+                </p>
+                <p class="text-gray-400 leading-relaxed">Always open to new research collaborations and PhD opportunities :)</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="py-20 bg-gray-800 text-gray-100">
-        <div class="container mx-auto px-5">
-            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Resume</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<!-- Skills -->
+<section id="skills" class="py-20 bg-gray-900">
+    <div class="container mx-auto px-5">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Skills</h2>
+        <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-8 place-items-center" data-aos="fade-up" data-aos-delay="100">
 
-                <!-- LEFT: Publications + Experience -->
-                <div class="space-y-10">
+            <div class="flex flex-col items-center gap-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="skill-icon" alt="Python">
+                <span class="text-sm">Python</span>
+            </div>
 
-                    <!-- Publications -->
-                    <div class="bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
-                        <h3 class="text-2xl font-bold mb-4 text-red-500">Publications</h3>
-                        <ul class="list-none space-y-6">
+            <div class="flex flex-col items-center gap-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" class="skill-icon" alt="MATLAB">
+                <span class="text-sm">MATLAB</span>
+            </div>
 
-                            <li>
-                                <span class="inline-block bg-red-600 text-white text-xs px-2 py-1 rounded mb-2">Published</span>
-                                <h4 class="font-bold text-white">Explainable Epileptic Seizure Detection from EEG Signals via CNN–Bi-LSTM Attention Hybrid Model</h4>
-                                <p class="text-gray-400"><strong class="text-white">MM. Barzegar</strong>, N. Ahmadi Daryakenari, M. Khodatars</p>
-                                <p class="text-gray-400">Journal of Research and Health, 2025</p>
-                                <a href="https://doi.org/10.32598/JRH.15.specialissue.2892.1" target="_blank" class="text-blue-400 hover:underline text-sm">DOI: 10.32598/JRH.15.specialissue.2892.1</a>
-                            </li>
+            <div class="flex flex-col items-center gap-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="skill-icon" alt="TensorFlow">
+                <span class="text-sm">TensorFlow</span>
+            </div>
 
-                            <li>
-                                <span class="inline-block bg-red-600 text-white text-xs px-2 py-1 rounded mb-2">Published</span>
-                                <h4 class="font-bold text-white">Early Diagnosis of Epileptic Seizures from EEG Signals Using Graph Convolutional Network Model</h4>
-                                <p class="text-gray-400">A. Shoeibi, <strong class="text-white">MM. Barzegar</strong>, M. Khodatars, M. Jafari, A. Khajavi, J. M. Gorriz</p>
-                                <p class="text-gray-400">Proceedings of IWINAC, 2026</p>
-                                <a href="https://doi.org/10.1007/978-3-032-27314-7_11" target="_blank" class="text-blue-400 hover:underline text-sm">DOI: 10.1007/978-3-032-27314-7_11</a>
-                            </li>
+            <div class="flex flex-col items-center gap-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" class="skill-icon" alt="PyTorch">
+                <span class="text-sm">PyTorch</span>
+            </div>
 
-                            <li>
-                                <span class="inline-block bg-gray-500 text-white text-xs px-2 py-1 rounded mb-2">In Preparation</span>
-                                <h4 class="font-bold text-white">UCTESE-Net: Uncertainty Aware Explainable SE Network for Schizophrenia Diagnosis from EEG</h4>
-                                <p class="text-gray-400"><strong class="text-white">M. M. Barzegar</strong>, A. Shoeibi, et al. · 2026</p>
-                            </li>
+            <div class="flex flex-col items-center gap-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" class="skill-icon" alt="Scikit-learn">
+                <span class="text-sm">Scikit-learn</span>
+            </div>
 
-                            <li>
-                                <span class="inline-block bg-gray-500 text-white text-xs px-2 py-1 rounded mb-2">In Preparation</span>
-                                <h4 class="font-bold text-white">EEG-Based Diagnosis of Parkinson's Disease Using a Convolutional SE-Transformer Network</h4>
-                                <p class="text-gray-400"><strong class="text-white">M. M. Barzegar</strong>, A. Shoeibi, et al. · 2026</p>
-                            </li>
+            <div class="flex flex-col items-center gap-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="skill-icon" alt="NumPy">
+                <span class="text-sm">NumPy</span>
+            </div>
 
-                            <li>
-                                <span class="inline-block bg-gray-500 text-white text-xs px-2 py-1 rounded mb-2">In Preparation</span>
-                                <h4 class="font-bold text-white">Systematic Review on Alzheimer's Diagnosis from Neuroimaging Using Deep Graph Learning</h4>
-                                <p class="text-gray-400"><strong class="text-white">M. M. Barzegar</strong>, A. Shoeibi, et al. · 2026</p>
-                            </li>
+            <div class="flex flex-col items-center gap-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="skill-icon" alt="Pandas">
+                <span class="text-sm">Pandas</span>
+            </div>
 
-                        </ul>
-                    </div>
+            <div class="flex flex-col items-center gap-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" class="skill-icon" alt="Matplotlib">
+                <span class="text-sm">Matplotlib</span>
+            </div>
 
-                    <!-- Research Experience -->
-                    <div class="bg-gray-700 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
-                        <h3 class="text-2xl font-bold mb-4 text-red-500">Research Experience</h3>
-                        <ul class="list-none space-y-6">
-                            <li>
-                                <div class="flex items-start space-x-4">
-                                    <div>
-                                        <h4 class="font-bold text-xl text-white">Full-Time Researcher</h4>
-                                        <p class="text-gray-400">Neuroscience and Neuroengineering Laboratory (NNRL) <span class="text-gray-400">(Sep 2023 – Sep 2025)</span></p>
-                                        <ul class="list-disc pl-5 text-gray-300 mt-2 space-y-1">
-                                            <li>Developed explainable epileptic seizure detection using CNN–Bi-LSTM Attention model on EEG signals (published, JRH 2025).</li>
-                                            <li>Built GCN-based framework for epilepsy diagnosis from EEG functional connectivity graphs (published, IWINAC 2026).</li>
-                                            <li>Designed UCTESE-Net for schizophrenia diagnosis on public EEG dataset (14 SZ / 14 HC subjects).</li>
-                                            <li>Built Convolutional SE-Transformer for Parkinson's disease detection from EEG.</li>
-                                            <li>Conducted PRISMA-compliant systematic review and meta-analysis on Alzheimer's diagnosis (~95 studies).</li>
-                                            <li>Applied eLORETA source localization and PLV/PLI/Coherence features for motor imagery on PhysioNet (109 subjects).</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="flex flex-col items-center gap-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="skill-icon" alt="VS Code">
+                <span class="text-sm">VS Code</span>
+            </div>
 
-                </div>
+            <div class="flex flex-col items-center gap-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="skill-icon" style="filter:invert(1)" alt="GitHub">
+                <span class="text-sm">GitHub</span>
+            </div>
 
-                <!-- RIGHT: Education -->
-                <div class="space-y-10">
-                    <div class="bg-gray-800 p-6 rounded shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
-                        <h3 class="text-2xl font-bold mb-4 text-blue-500">Education</h3>
-                        <ul class="list-none space-y-8">
-                            <li>
-                                <div class="flex items-start space-x-4">
-                                    <div>
-                                        <h4 class="font-bold text-xl text-white">M.Sc. in Biomedical Engineering – Neurocognitive Engineering</h4>
-                                        <p class="text-gray-400">Iran University of Science and Technology (IUST) <span>(Sep 2022 – Sep 2025)</span></p>
-                                        <p class="text-gray-300 mt-1"><strong>GPA: 18.86/20 (4.0/4.0)</strong> | QS Ranking #436 (2025)</p>
-                                        <p class="text-gray-300 mt-1">Ranked 1st among 2022 M.Sc. intake</p>
-                                        <p class="text-gray-400 mt-1 text-sm italic">Thesis: Use of Source Localization and Brain Connectivity in Imagery Hand Movement Classification with EEG Signal</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="flex items-start space-x-4">
-                                    <div>
-                                        <h4 class="font-bold text-xl text-white">B.Sc. in Electrical Engineering</h4>
-                                        <p class="text-gray-400">Bu-Ali Sina University (BASU) <span>(Sep 2017 – Jan 2022)</span></p>
-                                        <p class="text-gray-300 mt-1"><strong>GPA: 16.16/20 (3.3/4.0)</strong></p>
-                                        <p class="text-gray-300 mt-1">Ranked among the top 15% of entrants (2017 intake)</p>
-                                        <p class="text-gray-400 mt-1 text-sm italic">Thesis: Image Classification CIFAR-10 Using Convolutional Neural Network</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+            <div class="flex flex-col items-center gap-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" class="skill-icon" alt="Jupyter">
+                <span class="text-sm">Jupyter</span>
+            </div>
+
+            <div class="flex flex-col items-center gap-2">
+                <i class="fas fa-brain text-5xl text-purple-400"></i>
+                <span class="text-sm">Deep Learning</span>
+            </div>
+
+            <div class="flex flex-col items-center gap-2">
+                <i class="fas fa-wave-square text-5xl text-green-400"></i>
+                <span class="text-sm">EEG Processing</span>
+            </div>
+
+            <div class="flex flex-col items-center gap-2">
+                <i class="fas fa-project-diagram text-5xl text-pink-400"></i>
+                <span class="text-sm">Brain Connectivity</span>
+            </div>
+
+            <div class="flex flex-col items-center gap-2">
+                <i class="fas fa-search text-5xl text-indigo-400"></i>
+                <span class="text-sm">Explainable AI</span>
+            </div>
+
+            <div class="flex flex-col items-center gap-2">
+                <i class="fas fa-map-marker-alt text-5xl text-cyan-400"></i>
+                <span class="text-sm">Source Localization</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-5">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Education</h2>
+        <div class="max-w-3xl mx-auto space-y-6">
+
+            <div class="bg-gray-700 p-6 rounded-xl card-hover" data-aos="fade-up">
+                <div class="flex items-start gap-4">
+                    <div class="text-blue-400 text-3xl mt-1"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">M.Sc. in Biomedical Engineering – Neurocognitive Engineering</h3>
+                        <p class="text-gray-400 text-sm mt-1">Iran University of Science and Technology (IUST) · Sep 2022 – Sep 2025</p>
+                        <p class="text-gray-300 mt-2"><strong class="text-white">GPA: 18.86/20 (4.0/4.0)</strong> &nbsp;|&nbsp; QS Ranking #436 (2025)</p>
+                        <p class="text-gray-300">Ranked <strong class="text-yellow-400">1st</strong> among 2022 M.Sc. intake</p>
+                        <p class="text-gray-400 text-sm mt-2 italic">Thesis: Use of Source Localization and Brain Connectivity in Imagery Hand Movement Classification with EEG Signal</p>
                     </div>
                 </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Honors and Awards Section -->
-    <section id="awards" class="py-16 bg-gray-800">
-        <div class="container mx-auto px-5">
-            <h2 class="text-4xl font-bold text-center mb-10" data-aos="fade-up">Honors & Awards</h2>
-
-            <div class="bg-gray-700 p-6 rounded shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
-                <div class="flex items-center gap-3 mb-2">
-                    <i class="fas fa-medal text-yellow-400 text-2xl"></i>
-                    <h3 class="font-semibold text-white text-xl">Ranked 1st – M.Sc. Intake 2022, Biomedical Engineering – Neurocognitive Engineering</h3>
-                </div>
-                <p class="text-gray-300">Top student among all 2022 M.Sc. entrants in Biomedical Engineering – Neurocognitive Engineering at Iran University of Science and Technology.</p>
             </div>
 
-            <div class="bg-gray-700 p-6 rounded shadow-md hover:shadow-lg transition transform hover:-translate-y-1 mt-4">
-                <div class="flex items-center gap-3 mb-2">
-                    <i class="fas fa-trophy text-yellow-400 text-2xl"></i>
-                    <h3 class="font-semibold text-white text-xl">Top 3% – Iran's National M.Sc. Entrance Exam</h3>
+            <div class="bg-gray-700 p-6 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-start gap-4">
+                    <div class="text-blue-400 text-3xl mt-1"><i class="fas fa-university"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">B.Sc. in Electrical Engineering</h3>
+                        <p class="text-gray-400 text-sm mt-1">Bu-Ali Sina University (BASU) · Sep 2017 – Jan 2022</p>
+                        <p class="text-gray-300 mt-2"><strong class="text-white">GPA: 16.16/20 (3.3/4.0)</strong></p>
+                        <p class="text-gray-300">Ranked among the <strong class="text-yellow-400">top 15%</strong> of entrants (2017 intake)</p>
+                        <p class="text-gray-400 text-sm mt-2 italic">Thesis: Image Classification CIFAR-10 Using Convolutional Neural Network</p>
+                    </div>
                 </div>
-                <p class="text-gray-300">Ranked in the top 3% among 15,728 participants in Iran's National M.Sc. Entrance Exam.</p>
-            </div>
-
-            <div class="bg-gray-700 p-6 rounded shadow-md hover:shadow-lg transition transform hover:-translate-y-1 mt-4">
-                <div class="flex items-center gap-3 mb-2">
-                    <i class="fas fa-award text-yellow-400 text-2xl"></i>
-                    <h3 class="font-semibold text-white text-xl">Top 8% – Iran's National B.Sc. Entrance Exam</h3>
-                </div>
-                <p class="text-gray-300">Ranked in the top 8% among 137,788 participants in Iran's National B.Sc. Entrance Exam.</p>
-            </div>
-
-            <div class="bg-gray-700 p-6 rounded shadow-md hover:shadow-lg transition transform hover:-translate-y-1 mt-4">
-                <div class="flex items-center gap-3 mb-2">
-                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
-                    <h3 class="font-semibold text-white text-xl">Top 15% – B.Sc. Electrical Engineering Entrants (2017)</h3>
-                </div>
-                <p class="text-gray-300">Ranked among the top 15% of entrants in the B.Sc. program in Electrical Engineering at Bu-Ali Sina University.</p>
             </div>
 
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-900 text-gray-100">
-        <div class="container mx-auto px-5">
-            <h2 class="text-4xl font-bold text-center mb-12">Contact</h2>
-            <div class="max-w-xl mx-auto space-y-6 text-lg">
-                <div class="flex items-center space-x-4">
-                    <i class="fas fa-envelope text-2xl text-white"></i>
-                    <a href="mailto:barzegar.mohammad.m@gmail.com" class="text-blue-400 hover:underline">barzegar.mohammad.m@gmail.com</a>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <i class="fab fa-github text-2xl text-white"></i>
-                    <a href="https://github.com/BarzegarMohammadMehdi" target="_blank" class="text-blue-400 hover:underline">GitHub (BarzegarMohammadMehdi)</a>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <i class="fab fa-linkedin text-2xl text-white"></i>
-                    <a href="https://www.linkedin.com/in/YOUR-ID" target="_blank" class="text-blue-400 hover:underline">LinkedIn</a>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <i class="fas fa-graduation-cap text-2xl text-white"></i>
-                    <a href="https://scholar.google.com/citations?user=YOUR-ID" target="_blank" class="text-blue-400 hover:underline">Google Scholar</a>
-                </div>
+<!-- Research Experience -->
+<section id="experience" class="py-20 bg-gray-900">
+    <div class="container mx-auto px-5">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Research Experience</h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-gray-800 p-6 rounded-xl card-hover" data-aos="fade-up">
+                <h3 class="text-xl font-bold text-white mb-1">Full-Time Researcher</h3>
+                <p class="text-red-400 text-sm mb-4">Neuroscience and Neuroengineering Laboratory (NNRL) · Sep 2023 – Sep 2025</p>
+                <ul class="list-disc pl-5 text-gray-300 space-y-2 text-sm leading-relaxed">
+                    <li>Developed explainable epileptic seizure detection using CNN–Bi-LSTM Attention model on EEG signals <span class="text-gray-400">(published, JRH 2025)</span>.</li>
+                    <li>Built GCN-based framework for epilepsy diagnosis from EEG functional connectivity graphs <span class="text-gray-400">(published, IWINAC 2026)</span>.</li>
+                    <li>Designed UCTESE-Net, uncertainty-aware SE network for schizophrenia diagnosis on public EEG dataset (14 SZ / 14 HC).</li>
+                    <li>Built Convolutional SE-Transformer for Parkinson's disease detection from EEG signals.</li>
+                    <li>Conducted PRISMA-compliant systematic review and meta-analysis on Alzheimer's diagnosis (~95 studies).</li>
+                    <li>Applied eLORETA source localization and PLV/PLI/Coherence features for motor imagery on PhysioNet (109 subjects).</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="py-6 bg-gray-900 text-center">
-        <p>&copy; 2025 Mohammad Mehdi Barzegar. All rights reserved :)</p>
-    </footer>
+<!-- Publications -->
+<section id="publications" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-5">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Publications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
 
-    <script>
-        AOS.init();
-    </script>
+            <div class="bg-gray-700 p-5 rounded-xl card-hover" data-aos="fade-up">
+                <span class="inline-block bg-red-600 text-white text-xs px-2 py-1 rounded mb-3 font-semibold">Published</span>
+                <h4 class="font-bold text-white text-sm leading-snug mb-2">Explainable Epileptic Seizure Detection from EEG Signals via CNN–Bi-LSTM Attention Hybrid Model</h4>
+                <p class="text-gray-400 text-xs mb-1"><strong class="text-white">MM. Barzegar</strong>, N. Ahmadi Daryakenari, M. Khodatars</p>
+                <p class="text-gray-400 text-xs mb-2">Journal of Research and Health, 2025</p>
+                <a href="https://doi.org/10.32598/JRH.15.specialissue.2892.1" target="_blank" class="text-blue-400 hover:underline text-xs">DOI →</a>
+            </div>
+
+            <div class="bg-gray-700 p-5 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="100">
+                <span class="inline-block bg-red-600 text-white text-xs px-2 py-1 rounded mb-3 font-semibold">Published</span>
+                <h4 class="font-bold text-white text-sm leading-snug mb-2">Early Diagnosis of Epileptic Seizures from EEG Signals Using Graph Convolutional Network Model</h4>
+                <p class="text-gray-400 text-xs mb-1">A. Shoeibi, <strong class="text-white">MM. Barzegar</strong>, M. Khodatars, M. Jafari, A. Khajavi, J. M. Gorriz</p>
+                <p class="text-gray-400 text-xs mb-2">Proceedings of IWINAC, 2026</p>
+                <a href="https://doi.org/10.1007/978-3-032-27314-7_11" target="_blank" class="text-blue-400 hover:underline text-xs">DOI →</a>
+            </div>
+
+            <div class="bg-gray-700 p-5 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="150">
+                <span class="inline-block bg-gray-500 text-white text-xs px-2 py-1 rounded mb-3 font-semibold">In Preparation</span>
+                <h4 class="font-bold text-white text-sm leading-snug mb-2">UCTESE-Net: Uncertainty Aware Explainable SE Network for Schizophrenia Diagnosis from EEG</h4>
+                <p class="text-gray-400 text-xs"><strong class="text-white">M. M. Barzegar</strong>, A. Shoeibi, et al. · 2026</p>
+            </div>
+
+            <div class="bg-gray-700 p-5 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="200">
+                <span class="inline-block bg-gray-500 text-white text-xs px-2 py-1 rounded mb-3 font-semibold">In Preparation</span>
+                <h4 class="font-bold text-white text-sm leading-snug mb-2">EEG-Based Diagnosis of Parkinson's Disease Using a Convolutional SE-Transformer Network</h4>
+                <p class="text-gray-400 text-xs"><strong class="text-white">M. M. Barzegar</strong>, A. Shoeibi, et al. · 2026</p>
+            </div>
+
+            <div class="bg-gray-700 p-5 rounded-xl card-hover md:col-span-2" data-aos="fade-up" data-aos-delay="250">
+                <span class="inline-block bg-gray-500 text-white text-xs px-2 py-1 rounded mb-3 font-semibold">In Preparation</span>
+                <h4 class="font-bold text-white text-sm leading-snug mb-2">Systematic Review and Meta-Analysis on Alzheimer's Diagnosis from Neuroimaging Using Deep Graph Learning</h4>
+                <p class="text-gray-400 text-xs"><strong class="text-white">M. M. Barzegar</strong>, A. Shoeibi, et al. · 2026</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Awards -->
+<section id="awards" class="py-20 bg-gray-900">
+    <div class="container mx-auto px-5">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Honors & Awards</h2>
+        <div class="max-w-3xl mx-auto space-y-4">
+
+            <div class="bg-gray-800 p-5 rounded-xl card-hover flex items-start gap-4" data-aos="fade-right">
+                <i class="fas fa-medal text-yellow-400 text-2xl mt-1"></i>
+                <div>
+                    <h3 class="font-bold text-white">Ranked 1st – M.Sc. Intake 2022</h3>
+                    <p class="text-gray-400 text-sm">Biomedical Engineering – Neurocognitive Engineering, IUST</p>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 p-5 rounded-xl card-hover flex items-start gap-4" data-aos="fade-right" data-aos-delay="100">
+                <i class="fas fa-trophy text-yellow-400 text-2xl mt-1"></i>
+                <div>
+                    <h3 class="font-bold text-white">Top 3% – Iran's National M.Sc. Entrance Exam</h3>
+                    <p class="text-gray-400 text-sm">Among 15,728 participants</p>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 p-5 rounded-xl card-hover flex items-start gap-4" data-aos="fade-right" data-aos-delay="150">
+                <i class="fas fa-award text-yellow-400 text-2xl mt-1"></i>
+                <div>
+                    <h3 class="font-bold text-white">Top 8% – Iran's National B.Sc. Entrance Exam</h3>
+                    <p class="text-gray-400 text-sm">Among 137,788 participants</p>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 p-5 rounded-xl card-hover flex items-start gap-4" data-aos="fade-right" data-aos-delay="200">
+                <i class="fas fa-star text-yellow-400 text-2xl mt-1"></i>
+                <div>
+                    <h3 class="font-bold text-white">Top 15% – B.Sc. Electrical Engineering Entrants (2017)</h3>
+                    <p class="text-gray-400 text-sm">Bu-Ali Sina University</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-5">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Contact</h2>
+        <div class="max-w-md mx-auto space-y-5 text-base" data-aos="fade-up" data-aos-delay="100">
+            <a href="mailto:barzegar.mohammad.m@gmail.com" class="flex items-center gap-4 bg-gray-700 p-4 rounded-xl hover:bg-gray-600 transition card-hover">
+                <i class="fas fa-envelope text-red-400 text-xl w-6"></i>
+                <span class="text-gray-200">barzegar.mohammad.m@gmail.com</span>
+            </a>
+            <a href="https://github.com/BarzegarMohammadMehdi" target="_blank" class="flex items-center gap-4 bg-gray-700 p-4 rounded-xl hover:bg-gray-600 transition card-hover">
+                <i class="fab fa-github text-white text-xl w-6"></i>
+                <span class="text-gray-200">BarzegarMohammadMehdi</span>
+            </a>
+            <a href="https://www.linkedin.com/in/YOUR-ID" target="_blank" class="flex items-center gap-4 bg-gray-700 p-4 rounded-xl hover:bg-gray-600 transition card-hover">
+                <i class="fab fa-linkedin text-blue-400 text-xl w-6"></i>
+                <span class="text-gray-200">LinkedIn</span>
+            </a>
+            <a href="https://scholar.google.com/citations?user=YOUR-ID" target="_blank" class="flex items-center gap-4 bg-gray-700 p-4 rounded-xl hover:bg-gray-600 transition card-hover">
+                <i class="fas fa-graduation-cap text-blue-300 text-xl w-6"></i>
+                <span class="text-gray-200">Google Scholar</span>
+            </a>
+            <a href="https://barzegarmohammadmehdi.github.io" target="_blank" class="flex items-center gap-4 bg-gray-700 p-4 rounded-xl hover:bg-gray-600 transition card-hover">
+                <i class="fas fa-globe text-green-400 text-xl w-6"></i>
+                <span class="text-gray-200">barzegarmohammadmehdi.github.io</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-6 bg-gray-900 text-center text-gray-500 text-sm">
+    © 2025 Mohammad Mehdi Barzegar · Tehran, Iran
+</footer>
+
+<script>
+    AOS.init({ duration: 700, once: true });
+</script>
 </body>
 </html>
