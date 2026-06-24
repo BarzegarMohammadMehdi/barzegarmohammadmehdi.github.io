@@ -11,9 +11,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .hero-overlay {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.92));
-        }
         .skill-icon { width: 64px; height: 64px; object-fit: contain; }
         .card-hover { transition: transform 0.3s, box-shadow 0.3s; }
         .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,0.3); }
@@ -24,58 +21,29 @@
 <!-- Navbar -->
 <nav class="fixed w-full bg-gray-900 z-50 py-4 shadow-lg">
     <div class="container mx-auto flex justify-between items-center px-5">
-        <a href="#home" class="text-xl font-bold hover:text-red-400 transition">MMB</a>
+        <a href="#about" class="text-xl font-bold hover:text-red-400 transition">MMB</a>
         <ul class="flex space-x-5 text-sm">
-            <li><a href="#home" class="hover:text-red-400 transition">Home</a></li>
             <li><a href="#about" class="hover:text-red-400 transition">About</a></li>
             <li><a href="#skills" class="hover:text-red-400 transition">Skills</a></li>
             <li><a href="#education" class="hover:text-red-400 transition">Education</a></li>
             <li><a href="#experience" class="hover:text-red-400 transition">Experience</a></li>
             <li><a href="#publications" class="hover:text-red-400 transition">Publications</a></li>
             <li><a href="#awards" class="hover:text-red-400 transition">Awards</a></li>
+            <li><a href="#activities" class="hover:text-red-400 transition">Academic Activities</a></li>
             <li><a href="#contact" class="hover:text-red-400 transition">Contact</a></li>
         </ul>
     </div>
 </nav>
 
-<!-- Hero -->
-<section id="home" class="relative h-screen flex items-center justify-center text-center bg-gray-950">
-    <div class="absolute inset-0 hero-overlay z-0"
-         style="background-image: url('./Images/Home.jpg'); background-size: cover; background-position: center;"><div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.75));"></div>
-    </div>
-    <div class="z-10 px-4">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-4" data-aos="fade-up">Mohammad Mehdi Barzegar</h1>
-        <p class="text-lg text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="100">
-            Neurocognitive Engineer &nbsp;·&nbsp; EEG Researcher &nbsp;·&nbsp; Deep Learning
-        </p>
-        <div class="flex justify-center space-x-4 mb-8" data-aos="fade-up" data-aos-delay="200">
-            <a href="./CV.pdf" target="_blank"
-               class="bg-red-600 hover:bg-red-500 text-white font-semibold px-6 py-2 rounded-full transition">
-                View CV
-            </a>
-            <a href="#contact"
-               class="border border-white hover:bg-white hover:text-gray-900 text-white font-semibold px-6 py-2 rounded-full transition">
-                Contact Me
-            </a>
-        </div>
-        <div class="flex justify-center space-x-6 text-2xl" data-aos="fade-up" data-aos-delay="300">
-            <a href="mailto:barzegar.mohammad.m@gmail.com" class="hover:text-red-400 transition" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://github.com/BarzegarMohammadMehdi" target="_blank" class="hover:text-red-400 transition" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/YOUR-ID" target="_blank" class="hover:text-red-400 transition" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://scholar.google.com/citations?user=YOUR-ID" target="_blank" class="hover:text-red-400 transition" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-            <a href="https://barzegarmohammadmehdi.github.io" target="_blank" class="hover:text-red-400 transition" title="Website"><i class="fas fa-globe"></i></a>
-        </div>
-    </div>
-</section>
-
 <!-- About -->
-<section id="about" class="py-20 bg-gray-800">
+<section id="about" class="py-32 bg-gray-800">
     <div class="container mx-auto px-5">
         <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">About Me</h2>
         <div class="flex flex-col md:flex-row items-center gap-10">
             <div class="md:w-1/3 flex justify-center" data-aos="fade-right">
                 <img src="./Images/About_Me.jpg" alt="Mohammad Mehdi Barzegar"
-                     class="rounded-2xl shadow-2xl border-4 border-red-600 w-72 h-96 object-cover">
+                     class="rounded-2xl shadow-2xl border-4 border-red-600 w-72 object-cover object-top"
+                     style="height: 380px;">
             </div>
             <div class="md:w-2/3" data-aos="fade-left">
                 <p class="text-gray-300 leading-relaxed mb-4">
@@ -88,6 +56,22 @@
                     I completed my M.Sc. in Neurocognitive Engineering at IUST with a GPA of <strong class="text-white">18.86/20 (4.0/4.0)</strong>, graduating as the <strong class="text-white">top student</strong> of my intake.
                 </p>
                 <p class="text-gray-400 leading-relaxed">Always open to new research collaborations and PhD opportunities :)</p>
+                <div class="flex gap-4 mt-6">
+                    <a href="./CV.pdf" target="_blank"
+                       class="bg-red-600 hover:bg-red-500 text-white font-semibold px-6 py-2 rounded-full transition text-sm">
+                        View CV
+                    </a>
+                    <a href="#contact"
+                       class="border border-white hover:bg-white hover:text-gray-900 text-white font-semibold px-6 py-2 rounded-full transition text-sm">
+                        Contact Me
+                    </a>
+                </div>
+                <div class="flex gap-5 mt-5 text-xl">
+                    <a href="mailto:barzegar.mohammad.m@gmail.com" class="hover:text-red-400 transition" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/BarzegarMohammadMehdi" target="_blank" class="hover:text-red-400 transition" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/YOUR-ID" target="_blank" class="hover:text-red-400 transition" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://scholar.google.com/citations?user=YOUR-ID" target="_blank" class="hover:text-red-400 transition" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                </div>
             </div>
         </div>
     </div>
@@ -98,64 +82,50 @@
     <div class="container mx-auto px-5">
         <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Skills</h2>
         <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-8 place-items-center" data-aos="fade-up" data-aos-delay="100">
-
             <div class="flex flex-col items-center gap-2">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="skill-icon" alt="Python">
                 <span class="text-sm">Python</span>
             </div>
-
             <div class="flex flex-col items-center gap-2">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" class="skill-icon" alt="MATLAB">
                 <span class="text-sm">MATLAB</span>
             </div>
-
             <div class="flex flex-col items-center gap-2">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="skill-icon" alt="TensorFlow">
                 <span class="text-sm">TensorFlow</span>
             </div>
-
             <div class="flex flex-col items-center gap-2">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" class="skill-icon" alt="PyTorch">
                 <span class="text-sm">PyTorch</span>
             </div>
-
             <div class="flex flex-col items-center gap-2">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" class="skill-icon" alt="Scikit-learn">
                 <span class="text-sm">Scikit-learn</span>
             </div>
-
             <div class="flex flex-col items-center gap-2">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="skill-icon" alt="NumPy">
                 <span class="text-sm">NumPy</span>
             </div>
-
             <div class="flex flex-col items-center gap-2">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="skill-icon" alt="Pandas">
                 <span class="text-sm">Pandas</span>
             </div>
-
             <div class="flex flex-col items-center gap-2">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" class="skill-icon" alt="Matplotlib">
                 <span class="text-sm">Matplotlib</span>
             </div>
-
             <div class="flex flex-col items-center gap-2">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="skill-icon" alt="VS Code">
                 <span class="text-sm">VS Code</span>
             </div>
-
             <div class="flex flex-col items-center gap-2">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="skill-icon" style="filter:invert(1)" alt="GitHub">
                 <span class="text-sm">GitHub</span>
             </div>
-
             <div class="flex flex-col items-center gap-2">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" class="skill-icon" alt="Jupyter">
                 <span class="text-sm">Jupyter</span>
             </div>
-
-
-
         </div>
     </div>
 </section>
@@ -165,7 +135,6 @@
     <div class="container mx-auto px-5">
         <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Education</h2>
         <div class="max-w-3xl mx-auto space-y-6">
-
             <div class="bg-gray-700 p-6 rounded-xl card-hover" data-aos="fade-up">
                 <div class="flex items-start gap-4">
                     <div class="text-blue-400 text-3xl mt-1"><i class="fas fa-graduation-cap"></i></div>
@@ -178,7 +147,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="bg-gray-700 p-6 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="100">
                 <div class="flex items-start gap-4">
                     <div class="text-blue-400 text-3xl mt-1"><i class="fas fa-university"></i></div>
@@ -191,7 +159,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -222,7 +189,6 @@
     <div class="container mx-auto px-5">
         <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Publications</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-
             <div class="bg-gray-700 p-5 rounded-xl card-hover" data-aos="fade-up">
                 <span class="inline-block bg-red-600 text-white text-xs px-2 py-1 rounded mb-3 font-semibold">Published</span>
                 <h4 class="font-bold text-white text-sm leading-snug mb-2">Explainable Epileptic Seizure Detection from EEG Signals via CNN–Bi-LSTM Attention Hybrid Model</h4>
@@ -230,7 +196,6 @@
                 <p class="text-gray-400 text-xs mb-2">Journal of Research and Health, 2025</p>
                 <a href="https://doi.org/10.32598/JRH.15.SP.2892.1" target="_blank" class="text-blue-400 hover:underline text-xs">DOI →</a>
             </div>
-
             <div class="bg-gray-700 p-5 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="100">
                 <span class="inline-block bg-red-600 text-white text-xs px-2 py-1 rounded mb-3 font-semibold">Published</span>
                 <h4 class="font-bold text-white text-sm leading-snug mb-2">Early Diagnosis of Epileptic Seizures from EEG Signals Using Graph Convolutional Network Model</h4>
@@ -238,25 +203,21 @@
                 <p class="text-gray-400 text-xs mb-2">Proceedings of IWINAC, 2026</p>
                 <a href="https://doi.org/10.1007/978-3-032-27314-7_11" target="_blank" class="text-blue-400 hover:underline text-xs">DOI →</a>
             </div>
-
             <div class="bg-gray-700 p-5 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="150">
                 <span class="inline-block bg-gray-500 text-white text-xs px-2 py-1 rounded mb-3 font-semibold">In Preparation</span>
                 <h4 class="font-bold text-white text-sm leading-snug mb-2">UCTESE-Net: Uncertainty Aware Explainable SE Network for Schizophrenia Diagnosis from EEG</h4>
                 <p class="text-gray-400 text-xs"><strong class="text-white">M. M. Barzegar</strong>, A. Shoeibi, et al. · 2026</p>
             </div>
-
             <div class="bg-gray-700 p-5 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="200">
                 <span class="inline-block bg-gray-500 text-white text-xs px-2 py-1 rounded mb-3 font-semibold">In Preparation</span>
                 <h4 class="font-bold text-white text-sm leading-snug mb-2">EEG-Based Diagnosis of Parkinson's Disease Using a Convolutional SE-Transformer Network</h4>
                 <p class="text-gray-400 text-xs"><strong class="text-white">M. M. Barzegar</strong>, A. Shoeibi, et al. · 2026</p>
             </div>
-
             <div class="bg-gray-700 p-5 rounded-xl card-hover md:col-span-2" data-aos="fade-up" data-aos-delay="250">
                 <span class="inline-block bg-gray-500 text-white text-xs px-2 py-1 rounded mb-3 font-semibold">In Preparation</span>
                 <h4 class="font-bold text-white text-sm leading-snug mb-2">Systematic Review and Meta-Analysis on Alzheimer's Diagnosis from Neuroimaging Using Deep Graph Learning</h4>
                 <p class="text-gray-400 text-xs"><strong class="text-white">M. M. Barzegar</strong>, A. Shoeibi, et al. · 2026</p>
             </div>
-
         </div>
     </div>
 </section>
@@ -266,7 +227,6 @@
     <div class="container mx-auto px-5">
         <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Honors & Awards</h2>
         <div class="max-w-3xl mx-auto space-y-4">
-
             <div class="bg-gray-800 p-5 rounded-xl card-hover flex items-start gap-4" data-aos="fade-right">
                 <i class="fas fa-medal text-yellow-400 text-2xl mt-1"></i>
                 <div>
@@ -274,7 +234,6 @@
                     <p class="text-gray-400 text-sm">Biomedical Engineering – Neurocognitive Engineering, IUST</p>
                 </div>
             </div>
-
             <div class="bg-gray-800 p-5 rounded-xl card-hover flex items-start gap-4" data-aos="fade-right" data-aos-delay="80">
                 <i class="fas fa-star text-yellow-400 text-2xl mt-1"></i>
                 <div>
@@ -282,7 +241,6 @@
                     <p class="text-gray-400 text-sm">Electrical Engineering, BASU</p>
                 </div>
             </div>
-
             <div class="bg-gray-800 p-5 rounded-xl card-hover flex items-start gap-4" data-aos="fade-right" data-aos-delay="150">
                 <i class="fas fa-trophy text-yellow-400 text-2xl mt-1"></i>
                 <div>
@@ -290,7 +248,6 @@
                     <p class="text-gray-400 text-sm">Among 15,728 participants</p>
                 </div>
             </div>
-
             <div class="bg-gray-800 p-5 rounded-xl card-hover flex items-start gap-4" data-aos="fade-right" data-aos-delay="220">
                 <i class="fas fa-award text-yellow-400 text-2xl mt-1"></i>
                 <div>
@@ -298,71 +255,91 @@
                     <p class="text-gray-400 text-sm">Among 137,788 participants</p>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
 
-<!-- Lab Gallery -->
-<section class="py-20 bg-gray-800">
+<!-- Academic Activities -->
+<section id="activities" class="py-20 bg-gray-800">
     <div class="container mx-auto px-5">
-        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Lab Life</h2>
-        <div class="relative max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-2xl" data-aos="fade-up">
-            <!-- Slides -->
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Academic Activities</h2>
+
+        <!-- Lab Gallery -->
+        <h3 class="text-2xl font-semibold text-center mb-6 text-gray-300" data-aos="fade-up">Lab Life</h3>
+        <div class="relative max-w-2xl mx-auto overflow-hidden rounded-2xl shadow-2xl mb-16" data-aos="fade-up">
             <div id="gallery" class="flex transition-transform duration-500 ease-in-out">
                 <div class="min-w-full">
-                    <img src="./Images/lab1.jpg" alt="Lab" class="w-full h-96 object-cover">
+                    <img src="./Images/lab1.jpg" alt="EEG Recording"
+                         class="w-full object-cover object-top" style="height: 520px;">
                 </div>
                 <div class="min-w-full">
-                    <img src="./Images/lab2.jpg" alt="EEG Recording" class="w-full h-96 object-cover">
+                    <img src="./Images/lab2.jpg" alt="Lab"
+                         class="w-full object-cover object-top" style="height: 520px;">
                 </div>
             </div>
-            <!-- Prev / Next -->
             <button onclick="slideGallery(-1)"
-                class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center transition text-xl">
                 &#8249;
             </button>
             <button onclick="slideGallery(1)"
-                class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center transition text-xl">
                 &#8250;
             </button>
-            <!-- Dots -->
             <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
                 <span class="dot w-2 h-2 rounded-full bg-white opacity-100 cursor-pointer" onclick="goToSlide(0)"></span>
                 <span class="dot w-2 h-2 rounded-full bg-white opacity-40 cursor-pointer" onclick="goToSlide(1)"></span>
             </div>
         </div>
+
+        <!-- Conference Talk -->
+        <h3 class="text-2xl font-semibold text-center mb-6 text-gray-300" data-aos="fade-up">Conference Talk</h3>
+        <div class="max-w-2xl mx-auto bg-gray-700 rounded-2xl overflow-hidden shadow-2xl" data-aos="fade-up">
+            <!-- جای ویدیو: لینک YouTube رو جایگزین YOUR_VIDEO_ID کن -->
+            <div class="relative w-full" style="padding-top: 56.25%;">
+                <iframe class="absolute inset-0 w-full h-full rounded-t-2xl"
+                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                    title="Conference Talk"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="p-5">
+                <h4 class="font-bold text-white mb-1">Conference Talk Title</h4>
+                <p class="text-gray-400 text-sm">Conference Name · Year · Location</p>
+            </div>
+        </div>
+
     </div>
 </section>
 
 <!-- Contact -->
-<section id="contact" class="py-20 bg-gray-800">
+<section id="contact" class="py-20 bg-gray-900">
     <div class="container mx-auto px-5">
         <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Contact</h2>
         <div class="max-w-md mx-auto space-y-5 text-base" data-aos="fade-up" data-aos-delay="100">
-            <a href="mailto:barzegar.mohammad.m@gmail.com" class="flex items-center gap-4 bg-gray-700 p-4 rounded-xl hover:bg-gray-600 transition card-hover">
+            <a href="mailto:barzegar.mohammad.m@gmail.com" class="flex items-center gap-4 bg-gray-800 p-4 rounded-xl hover:bg-gray-700 transition card-hover">
                 <i class="fas fa-envelope text-red-400 text-xl w-6"></i>
                 <span class="text-gray-200">barzegar.mohammad.m@gmail.com</span>
             </a>
-            <a href="https://github.com/BarzegarMohammadMehdi" target="_blank" class="flex items-center gap-4 bg-gray-700 p-4 rounded-xl hover:bg-gray-600 transition card-hover">
+            <a href="https://github.com/BarzegarMohammadMehdi" target="_blank" class="flex items-center gap-4 bg-gray-800 p-4 rounded-xl hover:bg-gray-700 transition card-hover">
                 <i class="fab fa-github text-white text-xl w-6"></i>
                 <span class="text-gray-200">BarzegarMohammadMehdi</span>
             </a>
-            <a href="https://www.linkedin.com/in/YOUR-ID" target="_blank" class="flex items-center gap-4 bg-gray-700 p-4 rounded-xl hover:bg-gray-600 transition card-hover">
+            <a href="https://www.linkedin.com/in/YOUR-ID" target="_blank" class="flex items-center gap-4 bg-gray-800 p-4 rounded-xl hover:bg-gray-700 transition card-hover">
                 <i class="fab fa-linkedin text-blue-400 text-xl w-6"></i>
                 <span class="text-gray-200">LinkedIn</span>
             </a>
-            <a href="https://scholar.google.com/citations?user=YOUR-ID" target="_blank" class="flex items-center gap-4 bg-gray-700 p-4 rounded-xl hover:bg-gray-600 transition card-hover">
+            <a href="https://scholar.google.com/citations?user=YOUR-ID" target="_blank" class="flex items-center gap-4 bg-gray-800 p-4 rounded-xl hover:bg-gray-700 transition card-hover">
                 <i class="fas fa-graduation-cap text-blue-300 text-xl w-6"></i>
                 <span class="text-gray-200">Google Scholar</span>
             </a>
-
         </div>
     </div>
 </section>
 
 <!-- Footer -->
-<footer class="py-6 bg-gray-900 text-center text-gray-500 text-sm">
+<footer class="py-6 bg-gray-900 text-center text-gray-500 text-sm border-t border-gray-800">
     © 2025 Mohammad Mehdi Barzegar · Tehran, Iran
 </footer>
 
